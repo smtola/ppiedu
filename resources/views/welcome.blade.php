@@ -21,7 +21,7 @@
         </div>
         <div
             class="relative flex flex-col justify-center items-center w-full mx-auto h-full xl:h-[30vh] bg-[#8f4440] overflow-hidden rounded-bl-xl md:rounded-bl-[10rem] rounded-br-xl">
-            <img src="http://www.ppiedu.com/system/upload/9e46c70b49048964c6d8556ecb59515e.jpg"
+            <img src="{{asset('assets/images/register.png')}}"
                 class="absolute inset-0 w-full object-contain object-center">
             <div class="bg-gradient-to-t from-[#8f4440]/90 to-[#ffffff]/20 absolute inset-0"></div>
             <div
