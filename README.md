@@ -23,7 +23,7 @@ A modern web application built with Laravel 11 and Filament admin panel, designe
 
 1. Clone the repository:
 ```bash
-git clone [repository-url]
+git clone [https://github.com/smtola/ppiedu.git]
 cd [project-directory]
 ```
 
