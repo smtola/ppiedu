@@ -1,4 +1,8 @@
-<x-guest-layout>
+@extends('layouts.guest')
+@section('banner')
+    <img src="{{ $url }}" alt="banner" class="w-full h-auto object-cover object-center">
+@endsection
+@section('content')
     <section class="w-full mt-[2rem] max-w-screen-2xl mx-auto overflow-hidden">
         <header class="flex justify-between px-3">
             <div>
@@ -24,17 +28,11 @@
         </header>
         <div class=" mt-8 w-full lg:mx-0">
             <div id="keen-slider" class="keen-slider">
-                <div class="keen-slider__slide">
-                    <img src="{{ url('assets/images/train.png') }}" class="w-full h-full">
-                </div>
-
-                <div class="keen-slider__slide">
-                    <img src="{{ url('assets/images/train.png') }}" class="w-full h-full">
-                </div>
-
-                <div class="keen-slider__slide">
-                    <img src="{{ url('assets/images/train.png') }}" class="w-full h-full">
-                </div>
+                @foreach ($training as $index => $item)
+                    <div class="keen-slider__slide">
+                        <img src="{{ $trainingMediaUrls[$index] }}" alt="{{ $item->name }}" class="w-full h-full">
+                    </div>
+                @endforeach
             </div>
         </div>
     </section>
@@ -61,4 +59,4 @@
       keenSliderPrevious.addEventListener('click', () => keenSlider.prev())
       keenSliderNext.addEventListener('click', () => keenSlider.next())
     </script>
-</x-guest-layout>
+@endsection

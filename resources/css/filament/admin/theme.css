@@ -1,0 +1,8 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@tailwind variants;
+@import '../../../../vendor/filament/filament/resources/css/base.css';
+@import '../../../../node_modules/cropperjs/dist/cropper.js';
+@import '../../../../vendor/awcodes/filament-curator/resources/css/plugin.css';
+@config 'tailwind.config.js';

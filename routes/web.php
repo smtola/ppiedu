@@ -1,33 +1,19 @@
 <?php
 
 use App\Http\Controllers\AboutUsController;
-use App\Http\Controllers\BannersController;
 use App\Http\Controllers\CareerController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\LapController;
-use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\TrainController;
+use App\Http\Controllers\RegistrationController;
 use Illuminate\Support\Facades\Route;
+use Inertia\Inertia;
 
 
 
-Route::get('/', function () {
-    return view('welcome');
-})->name('home');
+Route::get('/', [\App\Http\Controllers\HomeController::class,'index'])->name('home');
 
-Route::get('/faculty/information-technology', function () {
-    return view('faculty');
-})->name('faculty.datail');
-
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
-
-Route::middleware('auth')->group(function () {
-    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
-});
+Route::get('/faculty/{slug}', [\App\Http\Controllers\HomeController::class,'show'])->name('faculty.show');
 
 Route::controller(AboutUsController::class)->group(function () {
     Route::get('/aboutus',  'index')->name('aboutus');
@@ -47,10 +33,14 @@ Route::controller(LapController::class)->group(function () {
 
 Route::controller( CareerController::class)->group(function () {
     Route::get('/career',  'index')->name('career');
+    Route::post('/career/apply', [CareerController::class, 'apply'])->name('career.apply');
 });
 
-Route::controller(\App\Http\Controllers\BannersController::class)->group(function () {
-    Route::resource('banner', BannersController::class);
-});
+Route::get('/library', function () {
+    return Inertia::render('Library/Browser');
+})->name('library.browser');
 
-require __DIR__.'/auth.php';
+Route::get('/registration', [RegistrationController::class, 'create'])->name('registration.create');
+Route::post('/registration', [RegistrationController::class, 'store'])->name('registration.store');
+Route::get('/registration/success', [RegistrationController::class, 'success'])->name('registration.success');
+

@@ -17,21 +17,21 @@
     <!-- Scripts -->
         <link rel="preconnect" href="https://fonts.bunny.net">
         <link href="https://fonts.bunny.net/css?family=inter:400,500,600&display=swap" rel="stylesheet" />
-            @vite('resources/css/app.css')
+    @vite('resources/css/app.css')
 
         @fluxAppearance
         @livewireStyles
 </head>
 
-<body>
-    <header>
-        <img src="{{ asset('assets/images/banner.png') }}" alt="banner" class="w-full object-cover object-center">
-    </header>
-    @include('layouts.navigation-guest')
-    <main>
-        {{ $slot }}
-    </main>
-    @include('layouts.footer')
+<body class="overflow-x-hidden">
+        <header>
+            @yield('banner')
+        </header>
+        @include('layouts.navigation-guest')
+        <main>
+            @yield('content')
+        </main>
+        @include('layouts.footer')
       @fluxScripts
       @livewireScripts
 </body>

@@ -1,9 +1,12 @@
-<x-guest-layout>
-
+@extends('layouts.guest')
+@section('banner')
+    <img src="{{ $url }}" alt="banner" class="w-full h-auto object-cover object-center">
+@endsection
+@section('content')
     <section
         class="relative">
         <div>
-            <img src="{{ asset('assets/images/slide_1.png') }}" class="absolute inset-0 w-full h-full object-cover object-center">
+            <img src="{{ $url_1 }}" class="absolute inset-0 w-full h-full object-cover object-center">
         </div>
 
         <div class="absolute inset-0 bg-gray-900/75 sm:bg-transparent sm:bg-gradient-to-r from-gray-900/95 to-gray-900/25">
@@ -12,42 +15,17 @@
         <div class="relative mx-auto max-w-screen-xl px-4 py-32 sm:px-6 lg:flex lg:h-screen lg:items-center lg:px-8">
             <div class="max-w-xl text-start ltr:sm:text-left rtl:sm:text-right">
                 <h1 class="text-[30px] text-white sm:text-[50px]">
-                    មហាវិទ្យាល័យបច្ចេកវិទ្យាព័ត៌មាន
+                    {{ $faculty->name }}
                 </h1>
 
                 <ul class="mt-4 max-w-lg text-white sm:text-xl/relaxed list-disc ml-5">
+                   @foreach ($faculty->classFaculties as $classFaculty)
                     <li>
-                        <span>
-
-                        </span>
                         <p>
-                            ថ្នាក់បរិញ្ញាបត្រ(៤​ ឆ្នាំ)
+                            {{ $classFaculty->name }}
                         </p>
                     </li>
-                    <li>
-                        <span>
-
-                        </span>
-                        <p>
-                            ថ្នាក់បរិញ្ញាបត្ររង(២ ឆ្នាំ)
-                        </p>
-                    </li>
-                    <li>
-                        <span>
-
-                        </span>
-                        <p>
-                            ថ្នាក់បរិញ្ញាបត្រ(៤​ ឆ្នាំ)
-                        </p>
-                    </li>
-                    <li>
-                        <span>
-
-                        </span>
-                        <p>
-                            ថ្នាក់បរិញ្ញាបត្ររង(២ ឆ្នាំ)
-                        </p>
-                    </li>
+                    @endforeach
                 </ul>
 
                 <div class="mt-8 flex flex-wrap gap-4 text-center">
@@ -122,4 +100,4 @@
       keenSliderPrevious.addEventListener('click', () => keenSlider.prev())
       keenSliderNext.addEventListener('click', () => keenSlider.next())
     </script>
-</x-guest-layout>
+@endsection
