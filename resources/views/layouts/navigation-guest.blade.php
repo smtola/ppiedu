@@ -1,12 +1,12 @@
 <nav x-data="{ open: false }" class="sticky top-0 z-50">
     <div
-        class="bg-[#7f3636] flex justify-between items-start md:items-center md:gap-[2vw] p-4 md:p-5 w-full transition-all duration-500 ease-in-out">
+        class="bg-[#7f3636] flex justify-center xl:justify-between items-start md:items-center md:gap-[2vw] p-4 md:p-5 w-full transition-all duration-500 ease-in-out">
         <ul :class="{
             'max-sm:visible max-sm:opacity-100 max-sm:translate-y-0': open,
             'max-sm:invisible max-sm:opacity-0 max-sm:translate-y-[-100%]':
                 !open
         }"
-            class="max-sm:absolute max-sm:top-full max-sm:left-0 max-sm:right-0 max-sm:bg-[#7f3636] max-sm:py-4 max-sm:px-6 max-sm:shadow-lg flex flex-col md:flex-row md:justify-center md:items-center gap-4 md:gap-[2vw] text-[#ffffff] transition-all duration-300 ease-in-out">
+            class="max-sm:absolute max-sm:top-full max-sm:left-0 max-sm:right-0 max-sm:bg-[#7f3636] max-sm:py-4 max-sm:px-6 max-sm:shadow-lg flex flex-col md:flex-row md:justify-center md:items-center gap-3 md:gap-[2vw] text-[#ffffff] transition-all duration-300 ease-in-out">
             <li class="transition-all duration-300 ease-in-out">
                 <x-nav-link-guest :href="route('home')" :active="request()->routeIs('home')">
                     {{ __('ទំព័រដើម') }}
@@ -35,9 +35,13 @@
 
                 @include('components.ppi-dropdown')
             </li>
-
             <li class="transition-all duration-300 ease-in-out">
-                <x-nav-link-guest :href="route('contact', ['department' => 'contact-information'])" :active="request()->routeIs('contact')">
+                <x-nav-link-guest :href="route('news')" :active="request()->routeIs('news')">
+                    {{ __('ព្រឹត្តិការណ៍ថ្មីៗ') }}
+                </x-nav-link-guest>
+            </li>
+            <li class="transition-all duration-300 ease-in-out">
+                <x-nav-link-guest :href="route('contact')" :active="request()->routeIs('contact')">
                     {{ __('ទំនាក់ទំនង') }}
                 </x-nav-link-guest>
             </li>

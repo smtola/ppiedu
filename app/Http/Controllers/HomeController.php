@@ -7,7 +7,6 @@ use App\Models\Slider;
 use App\Models\Faculty;
 use App\Models\ClassFaculty;
 use App\Models\ClassFF;
-use App\Models\News;
 use App\Models\Potential;
 use App\Http\Resources\BannerListResource;
 
@@ -27,7 +26,6 @@ class HomeController extends Controller
         $faculties = Faculty::get();
         $classFaculties = ClassFaculty::get();
 
-        $news = News::get();
         $potentials = Potential::get();
 
         $sliderMediaUrls = [];
@@ -43,14 +41,6 @@ class HomeController extends Controller
             $mediaUrl = $faculty->getFirstMediaUrl('images', 'large');
             if (!empty($mediaUrl)) {
                 $facultyMediaUrls[] = $mediaUrl;
-            }
-        }
-
-        $newMediaUrls = [];
-        foreach ($news as $new) {
-            $mediaUrl = $new->getFirstMediaUrl('images', 'large');
-            if (!empty($mediaUrl)) {
-                $newMediaUrls[] = $mediaUrl;
             }
         }
 
@@ -82,8 +72,6 @@ class HomeController extends Controller
             'facultyMediaUrls',
             'faculties',
             'classFaculties',
-            'newMediaUrls',
-            'news',
             'potentialMediaUrls',
             'potentials',
             'anoun_1',

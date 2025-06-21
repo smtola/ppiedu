@@ -1,5 +1,5 @@
 <footer class="h-full bg-gradient-to-b from-[#ffa828]/60 to-[#8f4440]/70 w-full mx-auto p-0 m-0">
-    <div class="w-full h-full p-3 2xl:px-0 mt-[2rem] max-w-screen-2xl mx-auto overflow-hidden">
+    <div class="w-full h-full p-3 2xl:px-0 max-w-screen-2xl mx-auto overflow-hidden">
         <div class="grid grid-cols-12 justify-center items-center xl:items-start gap-[1vw]">
             <div class="col-span-12 md:col-span-6">
                 <div class="mt-5 text-[#ffffff] ">

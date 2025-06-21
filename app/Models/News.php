@@ -13,25 +13,34 @@ class News extends Model implements HasMedia
 
     public function registerMediaConversions(Media $media = null): void
     {
-    $this->addMediaConversion('thumb')
-        ->width(150)
-        ->height(150)
-        ->sharpen(10)
-        ->quality(90)
-        ->nonQueued();
+        $this->addMediaConversion('thumb')
+            ->width(150)
+            ->height(150)
+            ->sharpen(10)
+            ->quality(90)
+            ->nonQueued();
 
-    $this->addMediaConversion('small')
-        ->width(400)
-        ->quality(90)
-        ->nonQueued();
+        $this->addMediaConversion('small')
+            ->width(400)
+            ->quality(90)
+            ->nonQueued();
 
-    $this->addMediaConversion('large')
-        ->width(1080)
-        ->height(1920)
-        ->sharpen(10)
-        ->quality(90)
-        ->nonQueued();
+        $this->addMediaConversion('large')
+            ->width(1080)
+            ->height(1920)
+            ->sharpen(10)
+            ->quality(90)
+            ->nonQueued();
     }
 
-    protected $fillable = ['name','slug'];
+    protected $casts = [
+        'image_filenames' => 'array',
+    ];
+
+    protected $fillable = [
+        'name',
+        'slug',
+        'image_filenames',  
+        'content',  
+    ];
 }

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}" class="!bg-white">
 
 <head>
     <meta charset="utf-8">
@@ -23,7 +23,7 @@
         @livewireStyles
 </head>
 
-<body class="overflow-x-hidden">
+<body class="overflow-x-hidden !bg-white">
         <header>
             @yield('banner')
         </header>

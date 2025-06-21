@@ -73,7 +73,7 @@
                                                 class="w-full h-[30vh] bg-gray-300 rounded-md overflow-hidden transition-all duration-300 group-hover:scale-105 drop-shadow-sm">
                                                 @if (isset($libaryMediaUrls[$item->id]))
                                                     <img src="{{ $libaryMediaUrls[$item->id] }}"
-                                                        class="w-full h-full object-cover">
+                                                        class="w-full h-[30vh] object-contain object-center">
                                                 @else
                                                     <div class="w-full h-full flex items-center justify-center bg-gray-200">
                                                         <span class="text-gray-500">No image available</span>
@@ -159,16 +159,6 @@
                 </button>
             </div>
             <div id="modalContent" class="space-y-4">
-                <div class="bg-gray-50 rounded-lg p-4">
-                    <h4 class="font-medium text-gray-900 mb-2">Description</h4>
-                    <p id="modalDescription" class="text-gray-600"></p>
-                </div>
-                <div class="bg-gray-50 rounded-lg p-4">
-                    <h4 class="font-medium text-gray-900 mb-2">Resources</h4>
-                    <div id="modalLinks" class="space-y-2">
-                        <!-- Links will be dynamically added here -->
-                    </div>
-                </div>
             </div>
         </div>
     </div>
@@ -177,13 +167,11 @@
         function openModal(id, name, description, subjects, department, subjectLinks,subjectAttachment) {
             const modal = document.getElementById('libraryModal');
             const modalTitle = document.getElementById('modalTitle');
-            const modalDescription = document.getElementById('modalDescription');
             const modalSubject = document.getElementById('modalSubject');
             const modalDepartment = document.getElementById('modalDepartment');
             const modalLinks = document.getElementById('modalLinks');
 
             modalTitle.textContent = name || 'No title available';
-            modalDescription.textContent = description || 'No description available';
             modalSubject.innerHTML = ''; // Clear previous content
 
             // Then handle the links if they exist

@@ -1,10 +1,10 @@
 @extends('layouts.guest')
 
 @section('content')
-    <div class="w-full min-h-screen bg-gray-100 py-6 flex flex-col justify-center sm:py-12">
+    <div class="w-full min-h-screen bg-gray-100 py-6 flex flex-col justify-center sm:py-12 overflow-hidden">
         <div class="relative py-3 sm:max-w-xl sm:mx-auto">
-            <div class="relative w-full  px-4 py-10 bg-white mx-8 md:mx-0 shadow rounded-3xl sm:p-10">
-                <div class="w-full mx-auto">
+            <div class="relative w-full px-4 py-10 bg-white mx-1 md:mx-0 shadow rounded-3xl sm:p-10">
+                <div class="w-full max-w-md mx-auto">
                     <div class="divide-y divide-gray-200">
                         <div class="py-8 text-base leading-6 space-y-4 text-gray-700 sm:text-lg sm:leading-7">
                             <h2 class="text-2xl font-bold mb-8 text-center text-[#8f4440]">ចុះឈ្មោះតាមប្រព័ន្ធ Online</h2>

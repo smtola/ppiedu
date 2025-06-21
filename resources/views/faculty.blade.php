@@ -29,7 +29,7 @@
                 </ul>
 
                 <div class="mt-8 flex flex-wrap gap-4 text-center">
-                    <a href="#"
+                    <a href="{{ route('registration.create') }}"
                         class="block w-full rounded bg-[#8a2c28] px-12 py-3 text-sm font-medium text-white shadow hover:bg-[#7f3636] focus:outline-none active:bg-[#e9ad31] sm:w-auto">
                         សូមចុចទីនេះដើម្បីចុះឈ្មោះតាមប្រព័ន្ធ Online
                     </a>
@@ -38,7 +38,7 @@
         </div>
     </section>
 
-    <section class="w-full mt-[2rem] max-w-screen-2xl mx-auto overflow-hidden">
+    {{-- <section class="w-full mt-[2rem] max-w-screen-2xl mx-auto overflow-hidden">
         <header class="flex justify-between px-3 py-5">
             <div>
                 <h2 class="text-lg text-start md:text-xl text-[#e9ad31] lg:text-2xl ">សកម្មភាពសិក្សារបស់និស្សិតវិស្វកម្មអគ្គិសនី</h2>
@@ -76,7 +76,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> --}}
 
     <script type="module">
         import KeenSlider from 'https://cdn.jsdelivr.net/npm/keen-slider@6.8.6/+esm'

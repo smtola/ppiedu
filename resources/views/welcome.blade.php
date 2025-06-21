@@ -32,6 +32,7 @@
     </section>
 
     <section class="w-full px-3 2xl:px-0 my-[2rem] max-w-screen-2xl mx-auto overflow-hidden">
+         <h1 class="text-3xl md:text-4xl text-center text-[#e9ad31] font-bold py-[2rem]">វគ្គបណ្តុះបណ្តាល</h1>
         <!-- Swiper -->
         <div class="swiper_3 mySwiper_3 !overflow-visible">
             <div class="swiper-wrapper">
@@ -86,23 +87,7 @@
             </div>
         </div>
     </section>
-
-    <section class="w-full px-3 2xl:px-0 my-[2rem] max-w-screen-2xl mx-auto overflow-hidden">
-        <!-- Swiper -->
-        <div class="swiper_2 mySwiper_2 !overflow-hidden">
-            <div class="swiper-wrapper">
-                @foreach ($news as $index => $new)
-                    <div class="swiper-slide !w-[44vh] md:!w-[64vh] !rounded-3xl">
-                        <img src="{{ $newMediaUrls[$index] }}" alt="{{ $new->name }}"
-                            class="w-full h-full object-center !rounded-3xl">
-                        <div class="swiper-text">{{ $new->name }}</div>
-                    </div>
-                @endforeach
-            </div>
-            <div class="swiper-pagination"></div>
-        </div>
-    </section>
-
+    
     <section
         class="grid grid-cols-12 justify-center items-center gap-2
      w-full p-3 2xl:px-0 my-[2rem] max-w-screen-2xl mx-auto overflow-hidden">

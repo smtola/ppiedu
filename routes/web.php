@@ -5,6 +5,7 @@ use App\Http\Controllers\CareerController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\LapController;
 use App\Http\Controllers\TrainController;
+use App\Http\Controllers\NewsController;
 use App\Http\Controllers\RegistrationController;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -21,6 +22,11 @@ Route::controller(AboutUsController::class)->group(function () {
 
 Route::controller(TrainController::class)->group(function () {
     Route::get('/training',  'index')->name('training');
+});
+
+Route::controller(NewsController::class)->group(function () {
+    Route::get('/news',  'index')->name('news');
+    Route::get('/news/{id}',  'show')->name('news.show');
 });
 
 Route::controller(ContactController::class)->group(function () {
