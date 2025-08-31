@@ -23,15 +23,14 @@
     RUN sed -i 's|/var/www/html|/var/www/html/public|g' /etc/apache2/sites-available/000-default.conf
     
     WORKDIR /var/www/html
-    
-    # -------------------------
-    # Copy composer and install PHP dependencies
-    # -------------------------
-    COPY --from=composer:2 /usr/bin/composer /usr/bin/composer
+
     COPY composer.json composer.lock ./
+    RUN composer install --no-scripts --no-autoloader
     
-    RUN composer install --no-dev --optimize-autoloader --no-interaction --no-progress \
-        --ignore-platform-req=ext-intl --ignore-platform-req=ext-exif
+    COPY . .
+    RUN chmod +x artisan
+    
+    RUN composer dump-autoload --optimize && composer run-script post-install-cmd
     
     # -------------------------
     # Copy full Laravel project
