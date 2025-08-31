@@ -1,6 +1,6 @@
 <nav x-data="{ open: false }" class="sticky top-0 z-50">
     <div
-        class="bg-[#7f3636] flex justify-center xl:justify-between items-start md:items-center md:gap-[2vw] p-4 md:p-5 w-full transition-all duration-500 ease-in-out">
+        class="bg-[#7f3636] flex md:justify-center xl:justify-between items-start md:items-center md:gap-[2vw] p-4 md:p-5 w-full transition-all duration-500 ease-in-out">
         <ul :class="{
             'max-sm:visible max-sm:opacity-100 max-sm:translate-y-0': open,
             'max-sm:invisible max-sm:opacity-0 max-sm:translate-y-[-100%]':

@@ -70,10 +70,10 @@
                                         class="w-full">
                                         <div class="flex flex-col items-center gap-2 group">
                                             <div
-                                                class="w-full h-[30vh] bg-gray-300 rounded-md overflow-hidden transition-all duration-300 group-hover:scale-105 drop-shadow-sm">
+                                                class="w-full  bg-gray-300 rounded-md overflow-hidden transition-all duration-300 group-hover:scale-105 drop-shadow-sm">
                                                 @if (isset($libaryMediaUrls[$item->id]))
                                                     <img src="{{ $libaryMediaUrls[$item->id] }}"
-                                                        class="w-full h-[30vh] object-contain object-center">
+                                                        class="w-full  object-cover object-center">
                                                 @else
                                                     <div class="w-full h-full flex items-center justify-center bg-gray-200">
                                                         <span class="text-gray-500">No image available</span>

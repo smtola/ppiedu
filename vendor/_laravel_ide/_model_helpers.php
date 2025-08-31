@@ -2802,6 +2802,8 @@ namespace App\Models {
     /**
      * App\Models\News
      *
+     * @property string|null $content
+     * @property array|null $image_filenames
      * @property \Illuminate\Support\Carbon|null $updated_at
      * @property \Illuminate\Support\Carbon|null $created_at
      * @property string $slug
@@ -2814,6 +2816,8 @@ namespace App\Models {
      * @method static \Illuminate\Database\Eloquent\Builder<News>|News whereSlug($value)
      * @method static \Illuminate\Database\Eloquent\Builder<News>|News whereCreatedAt($value)
      * @method static \Illuminate\Database\Eloquent\Builder<News>|News whereUpdatedAt($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<News>|News whereImageFilenames($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<News>|News whereContent($value)
      * @method static \Illuminate\Database\Eloquent\Builder<News>|News newModelQuery()
      * @method static \Illuminate\Database\Eloquent\Builder<News>|News newQuery()
      * @method static \Illuminate\Database\Eloquent\Builder<News>|News query()

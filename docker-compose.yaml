@@ -1,0 +1,12 @@
+version: "3.8"
+services:
+  app:
+    build: .
+    ports:
+      - "8080:80"
+    volumes:
+      - .:/var/www/html
+    environment:
+      APP_ENV: local
+      APP_DEBUG: 1
+      APP_KEY: base64:0ea+yMJrkq4yuW6r7PZVeCe2I/gVJINO0oM0FEGtvug=
