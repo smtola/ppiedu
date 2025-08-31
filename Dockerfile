@@ -32,15 +32,16 @@
     # Ensure SQLite database exists
     RUN touch database/database.sqlite
     
-    # Permissions for Laravel
+    # After copying Laravel project
     RUN chown -R www-data:www-data storage bootstrap/cache database public \
         && chmod -R 775 storage bootstrap/cache database public
-    
-    # -------------------------
-    # Optional: build Tailwind / Filament assets
-    # -------------------------
+
+    # Build Tailwind assets
     RUN npm install
     RUN npm run build
+
+    # Copy storage assets to public if symlink fails
+    RUN mkdir -p public/storage && cp -r storage/app/public/* public/storage/ || true
     
     # Expose port
     EXPOSE 80
