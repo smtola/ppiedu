@@ -50,3 +50,18 @@ Route::get('/registration', [RegistrationController::class, 'create'])->name('re
 Route::post('/registration', [RegistrationController::class, 'store'])->name('registration.store');
 Route::get('/registration/success', [RegistrationController::class, 'success'])->name('registration.success');
 
+Route::get('/storage-link', function () {
+    try {
+        Artisan::call('storage:link');
+        return response()->json([
+            'success' => true,
+            'message' => 'Storage link created successfully.'
+        ]);
+    } catch (\Exception $e) {
+        return response()->json([
+            'success' => false,
+            'message' => 'Failed to create storage link.',
+            'error' => $e->getMessage()
+        ], 500);
+    }
+});
